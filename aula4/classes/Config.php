@@ -1,23 +1,20 @@
-<?
-$config = json_encode(array(
-	"conexao1"=>array(
-		"host"=>"127.0.0.1",
-		"user"=>"root",
-		"dbname"=>"microlins",
-		"password"=>"123"
-	),
-	"conexao2"=>array(
-		"host"=>"192.168.0.58",
-		"user"=>"root",
-		"dbname"=>"microlins_remoto",
-		"password"=>"abc"
-	)
-));
-
-$conf = json_decode($config);
-$data = 'conexao1';
-
-//$conn = $conf->{"conexao1"};
-$conn = $conf->$data;
-print_r($conn);
-
+<?php
+class Config{
+	public static function db(){
+		$config=[
+			'default'=>[
+				'host'=>'localhost',
+				'user'=> 'root',
+				'dbname'=> 'microlins',
+				'password'=> '',
+			],
+			'conexao2'=>[
+				'host'=>'121212',
+				'user'=> 'ddsds',
+				'dbname'=> 'dsdsad',
+				'password'=> 'dsdsa',
+			]
+		];
+		return $config;
+	}
+}
